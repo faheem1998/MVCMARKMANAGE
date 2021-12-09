@@ -243,6 +243,7 @@
     <Content Include="Views\User\AddMarks.cshtml" />
     <Content Include="Views\User\StdHome1.cshtml" />
     <Content Include="Views\User\FactHome1.cshtml" />
+    <Content Include="Views\User\TestGit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
