@@ -1,0 +1,66 @@
+﻿@model MVCMARKMANAGE.Models.facultyregister
+
+@{
+    ViewBag.Title = "FactHome";
+    Layout = "~/Views/User/_facLayoutPage2.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body style="background-color:blanchedalmond">
+    <div>
+        <div align="center">
+
+
+            <h2>Faculty Profile</h2>
+        </div>
+        <hr />
+        @if (Session["fid"] != null)
+        {
+
+
+
+
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Fid)
+            </dt>
+
+            <dd>
+                @Html.Label(Convert.ToString(Session["fid"]), htmlAttributes: new { @class = "control-label col-md-4" })
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.FactName)
+            </dt>
+
+            <dd>
+                @Html.Label(Convert.ToString(Session["factname"]), htmlAttributes: new { @class = "control-label col-md-4" })
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Location)
+            </dt>
+
+            <dd>
+                @Html.Label(Convert.ToString(Session["location"]), htmlAttributes: new { @class = "control-label col-md-4" })
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Phone)
+            </dt>
+
+            <dd>
+                @Html.Label(Convert.ToString(Session["phone"]), htmlAttributes: new { @class = "control-label col-md-4" })
+            </dd>
+
+        </dl>
+        }
+    </div>
+</body>
+</html>

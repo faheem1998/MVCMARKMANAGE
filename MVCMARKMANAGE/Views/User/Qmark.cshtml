@@ -1,0 +1,77 @@
+﻿@model IEnumerable <MVCMARKMANAGE.Models.Mark>
+
+@{
+    ViewBag.Title = "Qmark";
+    Layout = "~/Views/User/_facLayoutPage2.cshtml";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>studentview</title>
+</head>
+<body style="background-color:bisque">
+    <div style="text-align:center;width:100%">
+        <h1>Mark Info</h1>
+
+    </div>
+    <hr />
+    @using (Html.BeginForm("showallfacultyview", "User", FormMethod.Post))
+    {
+        <table class="table table-dark">
+            <tr>
+                <th>Exam Type</th>
+                <th>Student Name</th>
+                <th>Class Name</th>
+                <th>Science</th>
+                <th>Maths</th>
+                <th>Computer</th>
+                <th>Total</th>
+                <th>Average</th>
+                <th>Grade</th>
+
+
+
+
+            </tr>
+            @foreach (var cm in Model)
+            {
+        <tr>
+            <td>
+                @Html.DisplayFor(fac => cm.ExamType)
+            </td>
+            <td>
+                @Html.DisplayFor(fac => cm.StdName)
+            </td>
+            <td>
+                @Html.DisplayFor(fac => cm.ClassName)
+            </td>
+            <td>
+                @Html.DisplayFor(fac => cm.Science)
+            </td>
+            <td>
+                @Html.DisplayFor(fac => cm.Maths)
+            </td>
+            <td>
+                @Html.DisplayFor(fac => cm.Computer)
+            </td>
+            <td>
+                @Html.DisplayFor(fac => cm.Total)
+            </td>
+            <td>
+                @Html.DisplayFor(fac => cm.Average)
+            </td>
+            <td>
+                @Html.DisplayFor(fac => cm.Grade)
+            </td>
+
+
+
+        </tr>
+            }
+        </table>
+    }
+</body>
+</html>
+

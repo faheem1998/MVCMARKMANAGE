@@ -1,0 +1,68 @@
+﻿@model IEnumerable<MVCMARKMANAGE.Models.studentregister>
+
+@{
+    ViewBag.Title = "Sinfo";
+    Layout = "~/Views/User/_facLayoutPage2.cshtml";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>studentview</title>
+</head>
+<body style="background-color:bisque">
+    <div style="text-align:center;width:100%">
+        <h1>Students Information</h1>
+
+    </div>
+    <hr />
+    @using (Html.BeginForm("Sinfo", "User", FormMethod.Post))
+    {
+        <table class="table table-dark">
+            <tr>
+                <th>Roll no</th>
+                <th>Student Name</th>
+                <th>Gender</th>
+                <th>Address</th>
+                <th>Location</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Class ID</th>
+
+            </tr>
+            @foreach (var cm in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(std => cm.RollNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(std => cm.StdName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(std => cm.Gender)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(std => cm.Address)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(std => cm.Location)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(std => cm.Phone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(std => cm.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(std => cm.ClassName)
+                    </td>
+                </tr>
+            }
+        </table>
+    }
+</body>
+</html>
+
+

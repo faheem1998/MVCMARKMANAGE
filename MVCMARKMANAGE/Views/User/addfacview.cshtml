@@ -1,0 +1,94 @@
+﻿@model MVCMARKMANAGE.Models.facultyregister
+
+@{
+    ViewBag.Title = "addfacview";
+    Layout = "~/Views/User/userlayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>addfacview</title>
+</head>
+<body style="background-color:blanchedalmond">
+    <center>
+        <h1>Faculty Registration</h1>
+        <br />
+
+
+        @using (Html.BeginForm("addfacview", "User", FormMethod.Post))
+        {
+            <div style = "margin-left:230px" >
+            <table width="50%" style="text-align:justify;">
+                <tr>
+                    <td>Enter Faculty Id : </td>
+                    <td>
+                        @Html.TextBoxFor(e => e.Fid)
+                    </td>
+                </tr>
+                <tr>
+                    <td> Enter Faculty Name : </td>
+                    <td>
+                        @Html.TextBoxFor(e => e.FactName)
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Gender : </td>
+                    <td>
+                        @Html.RadioButtonFor(e => e.Gender, "Male")Male
+                        @Html.RadioButtonFor(e => e.Gender, "Female")Female
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>Address : </td>
+                    <td>
+                        @Html.TextBoxFor(e => e.Address)
+                    </td>
+                </tr>
+                <tr>
+                    <td>Location : </td>
+                    <td>
+                        @Html.TextBoxFor(e => e.Location)
+                    </td>
+                </tr>
+                <tr>
+                    <td>Phone : </td>
+                    <td>
+                        @Html.TextBoxFor(e => e.Phone)
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email : </td>
+                    <td>
+                        @Html.TextBoxFor(e => e.Email)
+                    </td>
+                </tr>
+                <tr>
+                    <td>Password : </td>
+                    <td>
+                        @Html.PasswordFor(e => e.Password)
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td colspan="2" align="center" style="padding:20px">
+                        <input type="submit" value="Add faculty" class="btn btn-primary" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">@ViewBag.update</td>
+                </tr>
+            </table>
+            </div>}
+    </center>
+</body>
+</html>
+
+
+

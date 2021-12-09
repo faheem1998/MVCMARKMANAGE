@@ -1,0 +1,61 @@
+﻿@model MVCMARKMANAGE.Models.studentregister
+
+@{
+    ViewBag.Title = "StdHome";
+    Layout = "~/Views/User/_LayoutPagestudent3.cshtml";
+}
+<body style="background-color:blanchedalmond">
+
+
+    <div>
+        <div align="center">
+            <h2>Student Profile</h2>
+        </div>
+
+        <hr />
+        <dl class="dl-horizontal">
+            @if (Session["rollno"] != null)
+            {
+
+
+                <div align="center">
+
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.RollNumber)
+                        </dt>
+
+                        <dd>
+                            @Html.Label(Convert.ToString(Session["rollno"]), htmlAttributes: new { @class = "control-label col-md-4" })
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.StdName)
+                        </dt>
+
+                        <dd>
+                            @Html.Label(Convert.ToString(Session["stdname"]), htmlAttributes: new { @class = "control-label col-md-4" })
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Location)
+                        </dt>
+
+                        <dd>
+                            @Html.Label(Convert.ToString(Session["location"]), htmlAttributes: new { @class = "control-label col-md-4" })
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Phone)
+                        </dt>
+
+                        <dd>
+                            @Html.Label(Convert.ToString(Session["phone"]), htmlAttributes: new { @class = "control-label col-md-4" })
+                        </dd>
+
+                    </dl>
+                </div>
+            }
+    </div>
+</body>
+

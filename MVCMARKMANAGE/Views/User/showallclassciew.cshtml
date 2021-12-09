@@ -1,0 +1,47 @@
+﻿@model IEnumerable<MVCMARKMANAGE.Models.addclass>
+
+@{
+    ViewBag.Title = "showallclassciew";
+    Layout = "~/Views/User/userlayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShowAllEmp</title>
+</head>
+<body style="background-color:bisque">
+    <div style="text-align:center;width:100%">
+        <h1>Class Information</h1>
+
+    </div>
+    <hr />
+    @using (Html.BeginForm("showallclassciew", "User", FormMethod.Post))
+    {
+        <table class="table table-dark" style="text-align:center">
+            <tr>
+                <th>Class ID</th>
+                <th>Class Name</th>
+               
+            </tr>
+            @foreach (var em in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(emp => em.ClassID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(emp => em.ClassName)
+                    </td>
+                   
+                </tr>
+            }
+        </table>
+    }
+    </body>
+</html>
+
+
+

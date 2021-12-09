@@ -1,0 +1,60 @@
+﻿@model MVCMARKMANAGE.Models.cfmap
+
+@{
+    ViewBag.Title = "facmap";
+    Layout = "~/Views/User/userlayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>facmap</title>
+</head>
+<body style="background-color:blanchedalmond">
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    
+    
+    @using (Html.BeginForm()) 
+    {
+        @Html.AntiForgeryToken()
+        
+    <div class="form-horizontal" style="width:30%;margin-left:400px;padding:30px;">
+        <div style="text-align:center">
+            <h4>Class Faculty Mapping</h4>
+        </div>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            Class Name:
+            <div class="col-md-10">
+                @Html.DropDownListFor(e => e.ClassId, ViewBag.CityList as SelectList, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ClassId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            Faculty Name
+            <div class="col-md-10">
+                @Html.DropDownListFor(e => e.Fid, ViewBag.CityList1 as SelectList, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Fid, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <br />
+
+        <div class="form-group" align="center">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Map" class="btn btn-primary" />
+            </div>
+        </div>
+        <div style="color:red">
+            @ViewBag.info
+        </div>
+    </div>
+    }
+    
+   
+</body>
+</html>

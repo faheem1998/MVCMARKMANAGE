@@ -1,0 +1,64 @@
+﻿@model MVCMARKMANAGE.Models.Users
+@using MVCMARKMANAGE.Models
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+   
+    @*@Styles.Render("~/Content/css")*@
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<style>
+    body {
+        
+        /*  margin-top:130px;*/
+        background-size: cover;
+    }
+</style>
+
+</head>
+@*<body style="margin-top:130px;background-color:darkblue">*@
+<body style="width: 100%; background-image: url('../../wp2225002-colleges-wallpapers.jpg'); ">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6" style="padding:50px">
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="card" style="width:450px;margin-left:125px;margin-top:100px">
+                        <div class="card-header bg-primary" style="text-align:center">
+                            <b>Login Here</b>
+                        </div>
+                        <div class="card-body">
+                            User Name : @Html.TextBoxFor(u => u.Username, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(u => u.Username, "", new { @class = "bg-danger" })
+                            <br />
+                            Password : @Html.PasswordFor(u => u.Password, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(u => u.Password, "", new { @class = "bg-danger" })
+                            <br />
+                            Type:  @Html.DropDownListFor(c => c.Ctypes, new SelectList(Enum.GetValues(typeof(Types))), new { @class = "form-control" })
+                            @Html.ValidationMessageFor(c => c.Ctypes, "", new { @class = "bg-danger" })
+                            <br />
+                            <input type="submit" value="Login Here" class="btn btn-primary" style="text-align:center;margin-left:140px" />
+                            <br />
+                            <div style="color:red">
+                                @ViewBag.info
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+    }
+</body> 
+</html>

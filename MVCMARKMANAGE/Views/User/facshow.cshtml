@@ -1,0 +1,46 @@
+﻿@model IEnumerable<MVCMARKMANAGE.Models.cfmap>
+@{
+    ViewBag.Title = "facshow";
+    Layout = "~/Views/User/userlayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>studentview</title>
+</head>
+<body style="background-color:bisque">
+    <div style="text-align:center;width:100%">
+        <h1>Faculty Class  Information</h1>
+
+    </div>
+    <hr />
+    @using (Html.BeginForm("facshow", "User", FormMethod.Post))
+    {
+        <table class="table table-dark" style="text-align:center">
+            <tr>
+                <th> Class Name</th>
+                <th>
+                    Faculty Name
+                </th>
+
+            </tr>
+            @foreach (var cm in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(cf => cm.classname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(cf => cm.Fname)
+                    </td>
+                </tr>
+            }
+        </table>
+    }
+</body>
+</html>
+
+

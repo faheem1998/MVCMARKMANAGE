@@ -1,0 +1,73 @@
+﻿@model IEnumerable <MVCMARKMANAGE.Models.facultyregister>
+
+@{
+    ViewBag.Title = "showallfacultyview";
+    Layout = "~/Views/User/userlayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>studentview</title>
+</head>
+<body style="background-color:bisque">
+    <div style="text-align:center;width:100%">
+        <h1>Faculty Information</h1>
+
+    </div>
+    <hr />
+    @using (Html.BeginForm("showallfacultyview", "User", FormMethod.Post))
+    {
+        <table class="table table-dark">
+            <tr>
+                <th>Faculty id</th>
+                <th>Faculty Name</th>
+                <th>Gender</th>
+                <th>Address</th>
+                <th>Location</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Password</th>
+              
+
+            </tr>
+            @foreach (var cm in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(fac => cm.Fid)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(fac => cm.FactName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(fac => cm.Gender)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(fac => cm.Address)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(fac => cm.Location)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(fac => cm.Phone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(fac => cm.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(fac => cm.Password)
+                    </td>
+                  
+                </tr>
+            }
+        </table>
+    }
+</body>
+</html>
+
+
+
+

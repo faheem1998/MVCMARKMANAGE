@@ -1,0 +1,61 @@
+﻿
+@model MVCMARKMANAGE.Models.addclass
+@{
+    ViewBag.Title = "classesview";
+    Layout = "~/Views/User/userlayout.cshtml";
+}
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>classesview</title>
+</head>
+<body style="background-color:navajowhite">
+    <center>
+
+
+
+        @using (Html.BeginForm("classesview", "User", FormMethod.Post))
+        {
+            <br/><br/><br/>
+            <div class="card" style="width:500px">
+                <div class="card-header bg-warning" >
+                    <b>Add class</b>
+                </div>
+                <div class="card-body">
+
+
+
+
+                    <table width="100%" border="0">
+
+                        <tr>
+                            <td> Class Name  </td>
+                            <td style="padding:20px">
+                                @Html.TextBoxFor(e => e.ClassName, new { @class = "form-control" })
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="center">
+                                <input type="submit" value="Add class" class="btn btn-warning" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="color:red">@ViewBag.update</td>
+                        </tr>
+                    </table>
+
+                    </div></div>
+
+
+
+
+
+                    }
+        </center>
+</body>
+</html>
