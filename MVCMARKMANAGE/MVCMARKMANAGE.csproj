@@ -244,6 +244,7 @@
     <Content Include="Views\User\StdHome1.cshtml" />
     <Content Include="Views\User\FactHome1.cshtml" />
     <Content Include="Views\User\TestGit.cshtml" />
+    <Content Include="Views\User\TestGit2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
